@@ -8,7 +8,7 @@ Using functions call by reference method.*/
 
 int rectangle(int *, int *);
 float circle(int *);
-int square(int *)
+int square(int *);
 int main()
 {
     int radius, length, width, side;
@@ -19,11 +19,11 @@ int main()
 
     printf("\nEnter radius : ");
     scanf("%d",&radius);
-    printf("\nPerimeter of %d is %d\n",radius,circle(&radius));
+    printf("\nPerimeter of %d is %.2f\n",radius,circle(&radius));
 
     printf("\nEnter square side : ");
     scanf("%d",&side);
-    printf("\nPerimeter of %d is %d\n",side,square(&side));
+    printf("\nPerimeter of %d is %d\n\n",side,square(&side));
 
     return 0;
 }
@@ -33,7 +33,7 @@ int main()
 int rectangle(int *p, int *q)
 {
     int result;
-    result = 2(*p * *q);
+    result = 2*(*p * *q);
     return result;
 }
 

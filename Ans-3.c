@@ -9,21 +9,23 @@ For a given number using recursion.*/
 
 int fact(int);
 int digit_sum(int);
-void fibonacci(int);
+int fibonacci(int);
 int main()
 {
     int f, num, range;
-    printf("\nEnter any number : ");
+    printf("\nEnter any number for factorial : ");
     scanf("%d",&f);
     printf("\nFactorial of %d is %d\n",f,fact(f));
 
-    printf("\nEnter any number : ");
+    printf("\nEnter any number for digit sum : ");
     scanf("%d",&num);
     printf("\n%d digit sum is %d\n",num,digit_sum(num));
 
     printf("\nEnter range for fibonacci : ");
     scanf("%d",&range);
-    fibonacci(range);
+    printf("\n");
+    for(f=1; f<=range; f++)
+        printf("%d\t",fibonacci(f));
     printf("\n\n");
 }
 
@@ -43,11 +45,13 @@ int digit_sum(int n)
 }
 
 
-void fibonacci(int n)
+int fibonacci(int n)
 {
-    if(n>0)
-    {
-        printf("%d\t",(n-1)+(n-2));
-        fibonacci(n-1);
-    }
+    if(n==1)
+        return 0;
+    else if(n==2)
+        return 1;
+    else
+        return fibonacci(n-1) + fibonacci(n-2);
+
 }
